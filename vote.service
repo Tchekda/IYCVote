@@ -1,0 +1,14 @@
+[Unit]
+Description=IYC Vote
+After=network.target
+
+[Service]
+User=CHANGEME
+WorkingDirectory=/home/CHANGEME/vote
+ExecStart=/usr/local/bin/python3 vote.py
+Restart=always
+Environment=IYC_USERNAME=CHANGEME
+Environment=IYC_PASSWORD=CHANGEME
+
+[Install]
+WantedBy=multi-user.target
